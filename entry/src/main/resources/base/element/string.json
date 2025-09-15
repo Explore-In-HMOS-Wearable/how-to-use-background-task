@@ -1,0 +1,16 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "Execute some arbitrary code after given time."
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "Timer CodeLab"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "TimerBackgroundTask"
+    }
+  ]
+}
