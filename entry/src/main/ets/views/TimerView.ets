@@ -37,12 +37,12 @@ export struct TimerView {
         this.customDialogBuilder();
       },
       onWillDismiss: (dismissDialogAction: DismissDialogAction) => {
-        console.info('reason' + JSON.stringify(dismissDialogAction.reason))
-        console.log('dialog onWillDismiss')
-        if (dismissDialogAction.reason == DismissReason.PRESS_BACK) {
+        console.info(`reason: ${JSON.stringify(dismissDialogAction.reason)}`)
+        console.info('dialog onWillDismiss')
+        if (dismissDialogAction.reason === DismissReason.PRESS_BACK) {
           dismissDialogAction.dismiss()
         }
-        if (dismissDialogAction.reason == DismissReason.TOUCH_OUTSIDE) {
+        if (dismissDialogAction.reason === DismissReason.TOUCH_OUTSIDE) {
           dismissDialogAction.dismiss()
         }
       }
@@ -67,12 +67,12 @@ export struct TimerView {
     let reason = 'Turn room light off';
     try {
       let token = backgroundTaskManager.requestSuspendDelay(reason, () => {
-        if (this.timerId != -1) {
+        if (this.timerId !== -1) {
           clearTimeout(this.timerId);
         }
       });
 
-      console.info('Suspend delay token: ', token);
+      console.info(`Suspend delay token: ${token}`);
       this.timerId = setTimeout(() => {
         this.seconds = 0;
         this.prompt.openToast({
